@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ======================================================
     // Lazy-load Heavy Form Utilities (Phone Input)
     // ======================================================
-    const phoneInput = document.querySelector('#phoneNumber');
+    const phoneInput = document.querySelector('#mobileNumber');
 
     if (phoneInput) {
         let intlInitialized = false;
@@ -445,4 +445,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     emblaMain.on('select', updateActiveThumb);
     updateActiveThumb();
+    
+    // ======================================================
+    // CENTER PAGE DATA — CITY & CENTER NAME
+    // ======================================================
+
+    // Run only on center pages
+    if (document.body.dataset.pageType !== 'center') return;
+    
+    const city = document.body.dataset.centerCity;
+    const centerName = document.body.dataset.centerName;
+
+    // Set and lock City
+    if (city) {
+        document.querySelectorAll('select[name="City"]').forEach((select) => {
+            const option = Array.from(select.options).find((option) =>
+                option.value.trim().toLowerCase() === city.trim().toLowerCase()
+            );
+
+            if (!option) return;
+
+            select.value = option.value;
+            select.dispatchEvent(new Event('change', {
+                bubbles: true
+            }));
+
+            select.disabled = true;
+        });
+    }
+
+    // Set and lock Center Name
+    if (centerName) {
+        document.querySelectorAll('input[name="Center-Name"]').forEach((input) => {
+            input.value = `${centerName}, ${city}`;
+            input.readOnly = true;
+        });
+    }
 });
