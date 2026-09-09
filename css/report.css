@@ -4238,6 +4238,10 @@ td {
     order: unset;
   }
 
+  .promo-heading {
+    margin-bottom: var(--_size---spacing--0);
+  }
+
   .promo-img-wrap {
     margin-bottom: var(--_size---spacing--32x);
     order: unset;
@@ -5797,10 +5801,6 @@ td {
 
   .promo-card-button {
     width: 100%;
-  }
-
-  .promo-img-wrap {
-    min-height: 24.375rem;
   }
 
   .list-link-title {
