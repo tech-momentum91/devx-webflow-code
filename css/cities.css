@@ -1086,7 +1086,7 @@ em {
 
 .section-hero.is-full {
   padding-bottom: var(--_size---spacing--120x);
-  /* height: calc(100dvh - var(--_size---footer--height)); */
+  height: calc(100dvh - var(--_size---footer--height));
   justify-content: center;
   align-items: center;
   display: flex;
@@ -2552,6 +2552,10 @@ em {
 
   .call-button-pulse {
     background-color: #1c4942bf;
+  }
+
+  .section-hero.is-full {
+    height: 100%;
   }
 
   .hero-description.is-lg {
