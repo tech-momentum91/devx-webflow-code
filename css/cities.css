@@ -1478,6 +1478,7 @@ em {
   margin-bottom: var(--_size---spacing--44x);
   color: var(--_colors---heading--inverse);
   font-weight: var(--_typography---font-weight--semibold);
+  margin-inline: auto;
 }
 
 .thank-you-title {
@@ -1488,6 +1489,15 @@ em {
   text-shadow: 0 -5px 25px var(--_colors---glow--white), 0 -5px 10px var(--_colors---glow--orange), 0 5px 10px var(--_colors---glow--blue);
   font-size: clamp(31px, 1.18rem + 3.79vw, 63px);
   line-height: clamp(36px, 1.56rem + 3.45vw, 65px);
+  margin-inline: auto;
+}
+
+.thank-you-title.is-lg {
+    max-width: 46rem;
+}
+
+.hero-description.is-lg {
+    max-width: 70%;
 }
 
 .article-card {
